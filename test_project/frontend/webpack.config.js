@@ -7,10 +7,13 @@ module.exports = {
     path: path.resolve(__dirname, "./static/frontend"),
     filename: "[name].js",
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
